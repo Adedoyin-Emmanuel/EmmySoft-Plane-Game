@@ -1,6 +1,6 @@
 # EmmySoft-Plane-Game
 A 2d javaScript game built without any libraries
-This Game was built for fun by Adedoyin Aedniyi Emmanuel
+This Game was built for fun by Adedoyin Adeniyi Emmanuel
 it was built with HTML CSS and JAVASCRIPT which typically runs on the browser
 feel free to edit the code and modify the game afterall a a programmer :);
 if you have any problem running the game then update your browser and try again or install the latest version of google chrome for the game to run
