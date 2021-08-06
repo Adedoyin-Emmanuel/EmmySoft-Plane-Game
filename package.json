@@ -1,5 +1,6 @@
-{
-    {
+
+[
+  {
    "gameName":"EmmySoft Plane Game",
     "Programming Language":"javascript",
     "Markup Language":"HTML and CSS",
@@ -12,4 +13,5 @@
     "moreInfo":"check the Game Documents And the Game Info",
     "Favourite Quote":"I Am A Programmer And I Have No Life"
    }
-}
+]
+
