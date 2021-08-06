@@ -1,0 +1,43 @@
+All rights reserved courtsey of EmmySoft Game Productions
+This game is a javscript,html,css based game 
+This game is made by Adedoyin Emmanuel Adeniyi SS2 science #Emmzy 28 also the owner of DoyinTech.com
+several games have been built by this same guy
+
+ 
+
+
+GUIDELINES TO PLAY THE EMMYSOFT PLANE GAME
+This game comprises of a player which is controlled by the up, right, left and down arrow keys which is used to control the game direction
+The enemy are always moving in random speed and also the player have the ability to shoot the enemies by pressing the space bar there is also powerup which is spawn every five (5) seconds and makes the coin appear twice and also increases the coin velocity after 5 seconds, the ability is gone until another powerUp is taken
+There are 12 different levels with increasing game toughness or the game becomes harder the further level you proceed
+If your score is not up to 100 after you move up above the screen or below the screen or you move away from the game area, your biggerScore is always red else it is green you can always view you current score in the highScore game area
+
+
+
+this is a vanilla javascript game with no libraries please if you find any bug free to contact me at adedoyine535@gmail.com or message me on facebook at Adedoyin Emmanuel Adeniyi more games to be published by emmy stay tuned
+
+
+I hope you enjoy my game support me at www.EmmySoftGames.com or visit my company website at www.DoyinTech.com
+
+
+SPECIAL THANKS TO 
+special thanks to game developers studio.com who provided the images for this game 
+you can visit their site to purchase cool images for you game and also open art.org for the sounds i used in this project
+
+
+
+
+fourth game dev with javascript 
+this game is a open source code game you are free to modify it to your taste
+                                  
+//                                 ####################################
+//#############          ##        #                                   #
+//#                     #  #        #     #########   ##   ##         #
+//#                    #    #         #       #       #  #  #        #
+//#                   #      #          #     #       #     #      #
+//#############      ##########           #   #       #     #    #
+//#                                         #                   #
+//#                 #          #              # # # # # # # # #
+//#                #            #
+//#               #              #
+//#############  #                #

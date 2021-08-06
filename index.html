@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EmmySoft Plane Game</title>
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <audio src="background%20music.wav" id="backMusic"></audio>
+    <audio src="Upgrade1.wav" id="coinMusic"></audio>
+    <audio src="collision.m4a" id="endGameSound"></audio>
+    <audio src="explosion.m4a" id="explosion"></audio>
+    <audio src="JetLoop1.m4a" id="jetLoop"></audio>
+    <audio src="powerUpSound.wav" id="powerupSound"></audio>
+    <audio src="gunshot.wav" id="gunShot"></audio>
+    <div class="container" id="container">
+        <div class="bigScore" id="biggerScore">0</div>
+        <button id="restart" class="btn">RESTART GAME</button>
+        <div class="msg" id="msg">this is a dummy text</div>
+    </div>
+
+    <div id="scoreBox">SCORE:<span id="pScore">0</span></div>
+    <div id="levelsContainer">
+        <h3 class="gameName"></h3>
+        <div id="logoAnimation"></div>
+        <h3 class="levelSelect"></h3>
+        <!--<img src="silver.png" width="70" height="50" id="logo2"/>-->
+        <div id="animationcontainer"></div>
+
+
+        <div id="levelOne" class="levels">Level One</div>
+        <div id="levelTwo" class="levels">Level Two</div>
+        <div id="levelThree" class="levels">Level Three</div>
+        <div id="levelFour" class="levels">Level Four</div>
+        <div id="levelFive" class="levels">Level Five</div>
+
+        <div id="levelSix" class="levels">Level Six</div>
+        <!--        <div id="breakSpace"></div>
+            <br/><br/><br/>-->
+        <div id="levelSeven" class="levels">Level Seven</div>
+
+        <div id="levelEight" class="levels">Level Eight</div>
+        <div id="levelNine" class="levels">Level Nine</div>
+        <div id="levelTen" class="levels">Level Ten</div>
+        <div id="levelEleven" class="levels">Level Eleven</div>
+        <div id="levelTwelve" class="levels">Level Twelve</div>
+        <br/>
+        <br/>
+        <div id="footer">
+            <button id="highScore">High Score</button>
+            <button id="moreLevels">More Levels</button>
+            <span id="emmySoft" class="emmySoft"><span class="copyRight">&copy;</span> EmmySoft Productions version 1.0</span>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+
+</body>
+<script src="plane.js"></script>
+
+</html>

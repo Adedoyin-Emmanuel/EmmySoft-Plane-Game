@@ -1,0 +1,557 @@
+ .container {
+     height: 300px;
+     width: 500px;
+     background-image: url("msgBackground.png");
+     background-size: cover;
+     padding: 30px;
+     margin-top: 50px;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     flex-wrap: wrap;
+     border-radius: 10px;
+     box-shadow: -2px 2px 2px rgba(20, 30, 10, 0.3), -2px 2px 2px rgba(20, 30, 10, 0.3), 2px -2px 2px rgba(20, 30, 10, 0.3), -2px 2px 2px rgba(20, 30, 10, 0.3);
+     filter: brightness(20px);
+     position: sticky;
+     display: none;
+     color: white;
+     animation: animate 0.5s ease-in-out 1;
+     z-index: 1000;
+     /* transform: translateY(20px); */
+     display: none;
+ }
+ 
+ .msg {
+     padding: 25px;
+     font-family: corbel;
+     font-size: 20px;
+     text-transform: capitalize;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     transform: translateY(-50px);
+     display: flex;
+ }
+ 
+ .btn {
+     width: 400px;
+     height: 50px;
+     padding: 20px;
+     font-family: corbel;
+     font-size: 20px;
+     background-image: url("btnHoverBackground.png");
+     background-size: cover;
+     border-radius: 5px;
+     border: none;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transform: translateY(110px);
+     transition: 0.4s;
+     color: white;
+     text-shadow: 1px 1px 1px black;
+ }
+ 
+ .btn:hover {
+     cursor: pointer;
+     box-shadow: inset 1px 1px 2px #ffa500, 1px 1px 2px#ffa500, 1px 1px 2px #ffa500, 1px -1px 2px#ffa500;
+     color: white;
+ }
+ 
+ #appear {
+     background: lime;
+     border: none;
+     outline: none;
+     height: 50px;
+     width: 200px;
+     text-align: center;
+     font-family: corbel;
+     font-size: 20px;
+     border-radius: 10px;
+     padding: 5px;
+     filter: hue-rotate(40deg);
+     transition: 0.3s;
+ }
+ 
+ #appear:hover {
+     filter: grayscale(20%);
+     cursor: pointer;
+     background: lightgreen;
+ }
+ 
+ .msg .cancel {
+     font-size: 25px;
+     padding: 10px;
+     font-weight: 700;
+     transition: 0.3s;
+     font-family: cursive;
+ }
+ 
+ .msg .cancel:hover {
+     color: red;
+     cursor: pointer;
+ }
+ 
+ @keyframes animate {
+     0% {
+         transform: translateY(-300px) scale(0);
+     }
+     100% {
+         transform: translateY(0px) scale(1);
+     }
+ }
+ 
+ .spin {
+     height: 250px;
+     width: 300px;
+     display: flex;
+     background: dodgerblue;
+     opacity: .9;
+     border-radius: 10px;
+     margin: auto;
+     justify-content: center;
+     align-items: center;
+     padding: 10px;
+     font-family: corbel;
+     font-size: 20px;
+     text-align: center;
+     filter: brightness(20px);
+     box-shadow: -2px 2px 2px #000ffa, 2px 2px 2px #000ffa, 2px -2px 2px #000ffa;
+     position: relative;
+     top: 0;
+     left: 0;
+ }
+ 
+ body {
+     margin: 0;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ #scoreBox {
+     font-size: 20px;
+     font-family: verdana;
+     display: flex;
+     color: white;
+     text-shadow: 1px 1px 1px black;
+     padding: 5px;
+     position: absolute;
+     justify-content: center;
+     align-items: center;
+     display: none;
+ }
+ 
+ #pScore {
+     color: black;
+     font-size: 20px;
+     font-weight: 900;
+ }
+ 
+ .bigScore {
+     font-size: 40px;
+     font-family: consolas;
+     display: none;
+ }
+ 
+ #highScoreBox {
+     position: absolute;
+     font-family: consolas;
+     font-size: 40px;
+     display: flex;
+     transform: translateY(-300px);
+ }
+ 
+ canvas {
+     display: none;
+ }
+ 
+ #levelsContainer {
+     background-image: url("space.png");
+     background-size: cover;
+     transform: translateY(50px);
+     height: 500px;
+     width: 1000px;
+     margin: auto;
+     padding: 20px;
+     box-shadow: 2px 2px 2px black, 2px -2px 2px black, -2px 2px 2px black, 2px 2px 2px black;
+     border-radius: 10px;
+     display: block;
+ }
+ 
+ #breakSpace {
+     visibility: hidden;
+ }
+ 
+ .gameName,
+ .levelSelect {
+     font-family: corbel;
+     letter-spacing: -1px;
+     font-weight: normal;
+     font-size: 28px;
+     text-shadow: 1px 1px 1px black;
+     text-align: center;
+     color: white;
+ }
+ 
+ .gameName::before {
+     content: "";
+ }
+ 
+ .gameName::after {
+     content: "Select A Level!";
+ }
+ 
+ .levelSelect::before {
+     content: " ";
+ }
+ 
+ .levelSelect::after {
+     content: "EmmySoft Plane Game";
+ }
+ 
+ .levelSelect {
+     transform: translateY(-100px);
+ }
+ 
+ #moreLevels:hover {
+     color: black;
+     background: white;
+     cursor: pointer;
+ }
+ 
+ #highScore:hover {
+     background: aqua;
+     color: black;
+     cursor: pointer;
+ }
+ 
+ .levels {
+     height: 50px;
+     transform: translate(200px, -80px);
+     width: 90px;
+     background: gold;
+     display: inline-flex;
+     text-align: center;
+     flex-wrap: wrap;
+     border-radius: 10px;
+     padding: 15px;
+     z-index: 100;
+     box-shadow: 2px 2px 2px black, 2px 2px 2px black, 2px 2px 2px black, 2px 2px 2px black;
+     padding: 22px;
+     letter-spacing: -1px;
+     padding: 12px;
+     margin: 15px;
+     text-indent: 0px;
+     font-size: 25px;
+     font-weight: normal;
+     text-align: center;
+     text-transform: capitalize;
+     font-variant: small-caps;
+     font-family: consolas;
+     font-weight: 700;
+     transition: 0.6s;
+ }
+ 
+ .levels:hover {
+     background-color: transparent;
+ }
+ 
+ #levelOne:hover {
+     background-image: url(plane_1_blue.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelTwo:hover {
+     background-image: url(plane_1_red.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelThree:hover {
+     background-image: url(plane_1_yellow.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelFour:hover {
+     background-image: url(plane_1_pink.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelFive:hover {
+     background-image: url(plane_2_yellow.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelSix:hover {
+     background-image: url(plane_2_red.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelSeven:hover {
+     background-image: url(plane_2_green.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelEight:hover {
+     background-image: url(plane_2_blue.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelNine:hover {
+     background-image: url(plane_3_blue.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelTen:hover {
+     background-image: url(plane_3_red.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelEleven:hover {
+     background-image: url(plane_3_yellow.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ #levelTwelve:hover {
+     background-image: url(plane_3_green.png);
+     background-size: cover;
+     color: white;
+     cursor: pointer;
+     font-weight: 900;
+ }
+ 
+ .copyRight {
+     font-size: 30px;
+     color: white;
+     text-shadow: 1px 1px 1px white;
+     font-weight: 900;
+ }
+ 
+ #highScore,
+ #moreLevels {
+     height: 50px;
+     width: 200px;
+     border-radius: 10px;
+     font-size: 20px;
+ }
+ 
+ #highScore {
+     transform: translateX(-280px);
+     background: black;
+     color: white;
+     font-family: cursive;
+     transition: 0.6s;
+ }
+ 
+ #moreLevels {
+     transform: translateX(320px);
+     background: #ffa500;
+     color: white;
+     font-family: cursive;
+     transition: 0.6s;
+ }
+ 
+ body {
+     overflow: scroll;
+ }
+ 
+ #footer {
+     transform: translate(270px, -80px);
+     font-family: monospace;
+     font-size: 20px;
+     letter-spacing: -1px;
+     font-variant: small-caps;
+ }
+ 
+ #emmySoft {
+     transform: translate(70px, -40px);
+     color: white;
+     display: block;
+     text-shadow: 1px 1px 1px black;
+ }
+ 
+ #logo {
+     transform: translateY(-70px);
+     z-index: 1000;
+ }
+ 
+ #logo2 {
+     float: right;
+     transform: translateY(-70px);
+ }
+ 
+ #animationcontainer {
+     width: 400px;
+     height: 300px;
+     background-repeat: no-repeat;
+     transition: 0.5;
+     animation: goldflyingBird 0.5s ease-in-out infinite;
+     background-size: 100px;
+     transform: translate(300px, -180px);
+     float: right;
+ }
+ 
+ #logoAnimation {
+     animation: silverFlyingBird 0.5s ease-in-out infinite;
+     background-repeat: no-repeat;
+     width: 400px;
+     height: 300px;
+     background-size: 100px;
+     position: absolute;
+     transform: translateY(-115px);
+ }
+ 
+ @keyframes goldflyingBird {
+     0% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_000.png);
+     }
+     10% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_001.png);
+     }
+     20% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_002.png);
+     }
+     30% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_003.png)
+     }
+     40% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_004.png);
+     }
+     50% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_005.png);
+     }
+     60% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_006.png);
+     }
+     70% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_007.png);
+     }
+     80% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_008.png);
+     }
+     90% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_009.png)
+     }
+     100% {
+         background-image: url(__gold_coin_fly_no_up_down_movement_010.png);
+     }
+ }
+ 
+ @keyframes silverFlyingBird {
+     0% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_000.png);
+     }
+     10% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_001.png);
+     }
+     20% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_002.png);
+     }
+     30% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_003.png);
+     }
+     40% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_004.png);
+     }
+     50% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_005.png);
+     }
+     60% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_006.png);
+     }
+     70% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_007.png);
+     }
+     80% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_008.png);
+     }
+     90% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_009.png);
+     }
+     100% {
+         background-image: url(__silver_coin_fly_no_up_down_movement_010.png);
+     }
+ }
+ 
+ @media screen and (max-width:1200px) {
+     .container {
+         flex-direction: column;
+         width: 400px;
+     }
+     body {
+         overflow: hidden;
+     }
+     .btn {
+         display: flex;
+         width: 150px;
+         height: 70px;
+         align-items: center;
+         justify-content: center;
+         transform: translateY(140px);
+     }
+     .msg {
+         transform: translateY(-60px);
+         font-size: 22px;
+     }
+     #levelsContainer {
+         width: 500px;
+         height: 620px;
+     }
+     body {
+         overflow: scroll;
+     }
+     .levels {
+         margin: 10px;
+         transform: translate(50px, -380px);
+     }
+     #footer {
+         transform: translate(50px, -370px);
+     }
+     #moreLevels {
+         transform: translate(115px, 50px);
+         width: 150px;
+         height: 40px;
+         font-size: 16px;
+     }
+     #highScore {
+         transform: translate(-50px, 50px);
+         width: 150px;
+         height: 40px;
+         font-size: 16px;
+     }
+ }
