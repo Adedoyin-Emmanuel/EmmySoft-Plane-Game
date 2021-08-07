@@ -1,11 +1,11 @@
 //all thanks to God for making me code another game
-//thanks for playing my game feel free to edit the code to your taste afterall we are programmers :);
-//let's get coding
+
+//some codes are spaghetti like ie(they are long and could have just been placed in variables instead bear with me they are for performance and clearity purpose :)
 //initialize the api variable
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-//get all variables from the dom
+//get all variables from the dom and store their values in variables
 var backMusic = document.getElementById("backMusic");
 var coinMusic = document.getElementById("coinMusic");
 var endGameMusic = document.getElementById("endGameSound");
@@ -85,8 +85,10 @@ var enemySpawnTime1 = 6000;
 var enemySpawnTime2 = 5000;
 var enemySpawnTime;
 
-var playingLevelOneGame = false;
 
+
+//create different level flags and set their values to false afterall they aren' playing all levels :)..
+var playingLevelOneGame = false;
 var playingLevelTwoGame = false;
 var playingLevelThreeGame = false;
 var playingLevelFourGame = false;
@@ -109,11 +111,12 @@ function levelOneGame() {
 
         playerSpeed.dx = 5;
         playerSpeed.dy = 5;
-        enemySpeed = 7;
+        enemySpeed = 8;
         enemySpeedRetardation = 5;
         enemyNumber = 1;
         enemySpawnTime1 = 6000;
         enemySpawnTime2 = 5000;
+        backgroundSpeed=5;
         gameSetUp();
         init();
         animate();
@@ -127,13 +130,7 @@ levelOne.addEventListener("click", () => {
     msgContainer.innerHTML = "Are You Ready To Play Level One Game??"
     btn.innerHTML = "play".toUpperCase();
 
-    /* setTimeout(() => {
-        window.addEventListener("click", (e) => {
-            if (e.target != msgBox) {
-                location.reload();
-            }
-        })
-    }, 20); */
+
 
     //if the user clicks the play button
     btn.addEventListener("click", () => {
@@ -159,7 +156,7 @@ levelOne.addEventListener("click", () => {
 
 
 function levelTwoGame() {
-    if (!playingGame && !playingLevelOneGame) {
+    if (!playingGame && !playingLevelTwoGame) {
         return;
     } else {
         playerSpeed.dx = 7;
@@ -169,6 +166,7 @@ function levelTwoGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 5500;
         enemySpawnTime2 = 5000;
+        backgroundSpeed=6;
         gameSetUp();
         animate();
     }
@@ -213,6 +211,7 @@ function levelThreeGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 5000;
         enemySpawnTime2 = 4500;
+        backgroundSpeed=7;
         gameSetUp();
         animate();
     }
@@ -247,6 +246,7 @@ function levelFourGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 4500;
         enemySpawnTime2 = 4000;
+        backgroundSpeed=8;
         gameSetUp();
         animate();
     }
@@ -283,6 +283,7 @@ function levelFiveGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 4000;
         enemySpawnTime2 = 3500;
+        backgroundSpeed=9;
         gameSetUp();
         animate();
     }
@@ -320,6 +321,7 @@ function levelSixGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 3500;
         enemySpawnTime2 = 3000;
+        backgroundSpeed=10;
         gameSetUp();
         animate();
     }
@@ -353,6 +355,7 @@ function levelSevenGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 3300;
         enemySpawnTime2 = 3200;
+        backgroundSpeed=11;
         gameSetUp();
         animate();
     }
@@ -391,6 +394,7 @@ function levelEightGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 3100;
         enemySpawnTime2 = 3000;
+        backgroundSpeed=12;
         gameSetUp();
         animate();
     }
@@ -426,6 +430,7 @@ function levelNineGame() {
         enemyNumber = 1;
         enemySpawnTime1 = 3000;
         enemySpawnTime2 = 2900;
+        backgroundSpeed=12;
         gameSetUp();
         animate();
     }
@@ -455,13 +460,14 @@ function levelTenGame() {
     if (!playingGame && !playingLevelTenGame) {
         return;
     } else {
-        playerSpeed.dx = 22;
-        playerSpeed.dy = 22;
+        playerSpeed.dx = 20;
+        playerSpeed.dy = 20;
         enemySpeed = 25;
         enemySpeedRetardation = 20;
         enemyNumber = 1;
         enemySpawnTime1 = 2800;
         enemySpawnTime2 = 2600;
+        backgroundSpeed=12;
         gameSetUp();
         animate();
     }
@@ -489,13 +495,14 @@ function levelElevenGame() {
     if (!playingGame && !playingLevelElevenGame) {
         return;
     } else {
-        playerSpeed.dx = 24;
-        playerSpeed.dy = 24;
+        playerSpeed.dx = 20;
+        playerSpeed.dy = 20;
         enemySpeed = 27;
         enemySpeedRetardation = 23;
         enemyNumber = 1;
         enemySpawnTime1 = 2500;
         enemySpawnTime2 = 2300;
+        backgroundSpeed=12;
         gameSetUp();
         animate();
     }
@@ -523,13 +530,14 @@ function levelTwelveGame() {
     if (!playingGame && !playingLevelTwelveGame) {
         return;
     } else {
-        playerSpeed.dx = 25;
-        playerSpeed.dy = 25;
-        enemySpeed = 28;
+        playerSpeed.dx = 20;
+        playerSpeed.dy = 20;
+        enemySpeed = 30;
         enemySpeedRetardation = 25;
         enemyNumber = 1;
         enemySpawnTime1 = 2300;
         enemySpawnTime2 = 2000;
+        backgroundSpeed=14;
         gameSetUp();
         animate();
     }
@@ -666,41 +674,7 @@ function gameObjectColliding(object1, object2) {
 }
 
 function endGame() {
-    endGameMusic.play()
-    endGameMusic.volume=endGameMusicVolume;
-    canvas.style.display="none";
-    msgBox.style.display="flex";
-    playingGame=false;
-    biggerScore.style.display="block";
-    //biggerScore.style.color="white";
-    if(score>100){
-    //.style.color="green";
-    biggerScore.style.color="green";
-    var msg="You Passed This Level Your Score Is Greater Than 100 "+"You Actual Score Is "+score;
-        msgContainer.innerHTML=msg;
-    }else{
-        msg="You Failed This Level You Couldnt't Score Up To 100 "+"Your Actual Score Is "+score;
-      //  score.style.color="red";
-        biggerScore.style.color="red";
-        msgContainer.innerHTML=msg;
-        
-    }
-    localStorage.setItem("HighScore",score) || 0;
-    if(localStorage.getItem("HighScore")<score){
-        localStorage.setItem("HighScore",score);
-    }
-    btn.innerHTML="restart".toUpperCase();
-   // msgContainer.innerHTML=msg;
-    btn.addEventListener("click",()=>{
-     
-       // msgBox.style.display="none";
-        location.reload(true);
-    });
-    
-    
-    setTimeout(()=>{
-        location.reload();
-    },30000);
+   return;
 }
 
 function handleCoinCollision() {
@@ -853,7 +827,10 @@ class Player {
             dx: 0
         };
         this.radius = 50;
-
+        this.reposition={
+        	x:80,
+        	y:40
+        };
 
 
         this.image = new Image();
@@ -886,21 +863,26 @@ class Player {
             //if the user pressed the down key
             if (e.keyCode == 40) {
                 this.velocity.dy = playerSpeed.dy;
+                this.velocity.dx=0;
                 //if the user pressed the up key
             } else if (e.keyCode == 38) {
                 this.velocity.dy = -playerSpeed.dy;
+                this.velocity.dx=0;
                 //if the user pressed the right key
             } else if (e.keyCode == 37) {
                 //this.image.src=="rotatedPlane.png";
                 this.velocity.dx = -playerSpeed.dx;
+                this.velocity.dy=0;
 
                 this.image.src = "rotatedPlane.png";
                 //if the user pressed the left key
             } else if (e.keyCode == 39) {
                 if (this.image.src = "plane.png") {
                     this.velocity.dx = playerSpeed.dx;
+                    this.velocity.dy=0;
                 } else {
                     this.velocity.dx = -playerSpeed.dx;
+                    this.velocity.dy=0;
                 }
 
                 this.image.src = "plane.png";
@@ -912,7 +894,7 @@ class Player {
 
         this.draw = () => {
 
-            ctx.drawImage(this.image, this.x - 80, this.y - 40, this.width, this.height);
+            ctx.drawImage(this.image, this.x - this.reposition.x, this.y - this.reposition.y, this.width, this.height);
 
         }
 
@@ -928,6 +910,10 @@ class Enemy {
         this.width = width;
         this.height = height;
         this.radius = 40;
+        this.reposition={
+        	x:70,
+        	y:40
+        };
         this.image = new Image();
         this.image.src = randomPlane(planesArray);
         this.velocity = {
@@ -942,7 +928,7 @@ class Enemy {
 
 
         this.draw = () => {
-            ctx.drawImage(this.image, this.x - 70, this.y - 40, this.width, this.height);
+            ctx.drawImage(this.image, this.x - this.reposition.x, this.y - this.reposition.y, this.width, this.height);
         };
 
 
@@ -1044,6 +1030,10 @@ class PowerUp {
         this.radius = 20;
         this.image = new Image();
         this.image.src = randomPowerUp(powerUpArray);
+        this.reposition={
+        	x:30,
+        	y:20
+        };
         this.velocity = {
             dx: powerUpSpeed,
             dy: 0
@@ -1076,9 +1066,9 @@ var backgroundImage=new Image();
 backgroundImage.src="background.png";
 var backgroundX=0;
 var backgroundX2=backgroundImageWidth;
-var backMusicVolume=0.5;
+var backMusicVolume=0.7;
 var powerUpMusicVolume=1.0;
-var jetLoopMusicVolume=0.5;
+var jetLoopMusicVolume=1;
 var endGameMusicVolume=1.0;
 
 function init() {
@@ -1127,16 +1117,121 @@ function animate() {
     //scoreBox.style.display="flex";
     pScore.innnerHTML=score;
     if (aboveScreenHeight(player)) {
-        return endGame();
+           //could have written a function to place the code but this code have to run everytime the game is over to ensure the browser doesn't hang and the page doesn't loose it responsiveness
+    //you can still add it though it would still work........ moreover we could add acynchronous programming to the endgame function but that would be in the nex update  
+    cancelAnimationFrame(animateId);
+    endGameMusic.play();
+    backMusic.play();
+    canvas.style.display="none";
+    msgBox.style.display="flex";
+    playingGame=false;
+    biggerScore.style.display="block";
+    //biggerScore.style.color="white";
+    if(score>100){
+    //.style.color="green";
+    biggerScore.style.color="green";
+    var msg="You Passed This Level"+"Your Score Is "+score;
+        msgContainer.innerHTML=msg;
+    }else{
+        msg="You Failed This Level"+"Your Score Is "+score;
+      //  score.style.color="red";
+        biggerScore.style.color="red";
+        msgContainer.innerHTML=msg;
+        
+    }
+    
+    btn.innerHTML="restart".toUpperCase();
+   // msgContainer.innerHTML=msg;
+    btn.addEventListener("click",()=>{
+     
+       // msgBox.style.display="none";
+        location.reload();
+    });
+    
+    //reload the page after 30 seconds of inactivity ...
+    setTimeout(()=>{
+        location.reload();
+    },30000);
     }
     if (aboveScreenWidth(player)) {
-        return endGame();
+         //could have written a function to place the code but this code have to run everytime the game is over to ensure the browser doesn't hang and the page doesn't loose it responsiveness
+    //you can still add it though it would still work........
+    cancelAnimationFrame(animateId);
+    endGameMusic.play();
+    backMusic.play();
+    canvas.style.display="none";
+    msgBox.style.display="flex";
+    playingGame=false;
+    biggerScore.style.display="block";
+    //biggerScore.style.color="white";
+    if(score>100){
+    //.style.color="green";
+    biggerScore.style.color="green";
+    var msg="You Passed This Level"+"Your Score Is "+score;
+        msgContainer.innerHTML=msg;
+    }else{
+        msg="You Failed This Level"+"Your Score Is "+score;
+      //  score.style.color="red";
+        biggerScore.style.color="red";
+        msgContainer.innerHTML=msg;
+        
+    }
+    
+    btn.innerHTML="restart".toUpperCase();
+   // msgContainer.innerHTML=msg;
+    btn.addEventListener("click",()=>{
+     
+       // msgBox.style.display="none";
+        location.reload();
+    });
+    
+    //reload the page after 30 seconds of inactivity ...
+    setTimeout(()=>{
+        location.reload();
+    },30000);
     }
     enemies.forEach((enemy, enemyIndex) => {
+    	if(playingGame){
+            jetLoop.play();
+         
+    	}
+
         if (gameObjectColliding(player, enemy)) {
-            return setInterval(()=>{
-                endGame();
-            },0);
+    //could have written a function to place the code but this code have to run everytime the game is over to ensure the browser doesn't hang and the page doesn't loose it responsiveness
+    //you can still add it though it would still work........
+    cancelAnimationFrame(animateId);
+    endGameMusic.play();
+    backMusic.play();
+    canvas.style.display="none";
+    msgBox.style.display="flex";
+    playingGame=false;
+    biggerScore.style.display="block";
+    //biggerScore.style.color="white";
+    if(score>100){
+    //.style.color="green";
+    biggerScore.style.color="green";
+    var msg="You Passed This Level"+"Your Score Is "+score;
+        msgContainer.innerHTML=msg;
+    }else{
+        msg="You Failed This Level"+"Your Score Is "+score;
+      //  score.style.color="red";
+        biggerScore.style.color="red";
+        msgContainer.innerHTML=msg;
+        
+    }
+    
+    btn.innerHTML="restart".toUpperCase();
+   // msgContainer.innerHTML=msg;
+    btn.addEventListener("click",()=>{
+     
+       // msgBox.style.display="none";
+        location.reload();
+    });
+    
+    //reload the page after 30 seconds of inactivity ...
+    setTimeout(()=>{
+        location.reload();
+    },30000);
         }
 
         /*  if (aboveScreenHeight(enemy) || aboveScreenWidth(enemy)) {
@@ -1206,11 +1301,6 @@ function spawnEnemies() {
         let enemiesY = randomNumber(canvas.height - enemiesHeight, enemiesHeight);
         eSpeed = randomNumber(enemySpeed, enemySpeedRetardation);
 
-        if(playingGame){
-            jetLoop.play();
-            jetLoop.volume=1.0;
-            backMusic.volume=0.2;
-        }
        
 
         if (c !== 0) {
