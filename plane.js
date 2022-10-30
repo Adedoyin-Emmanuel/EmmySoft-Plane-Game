@@ -883,6 +883,7 @@ class Player {
                 } else {
                     this.velocity.dx = -playerSpeed.dx;
                     this.velocity.dy=0;
+                    this.image.src ="rotatedPlane.png";
                 }
 
                 this.image.src = "plane.png";
